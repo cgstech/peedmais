@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas - PEED+ - CGS Tech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Adicionando CSS para a página de vendas */
+        .vendas {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .vendas h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .filtro {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .filtro form {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .filtro select, .filtro input[type="text"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #a0a0a0ee;
+            background-color: #fff;
+        }
+
+        .filtro input[type="submit"] {
+            padding: 8px 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .filtro input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .vendas table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .vendas th, .vendas td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .vendas th {
+            background-color: #f4f4f4;
+        }
+
+        .status-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-form select {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #a0a0a0ee;
+            background-color: #fff;
+        }
+
+        .status-form button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .status-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="links-menu">Home</a>
+            <a href="clientes.html" class="links-menu">Clientes</a>
+            <a href="produtos.html" class="links-menu">Produtos</a>
+            <a href="vendas.html" class="links-menu">Pedidos</a>
+            <a href="relato.html" class="links-menu">Relatórios</a>
+            <a href="" class="links-menu">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="vendas">
+            <h2>Lista de Vendas</h2>
+            <!-- Filtro -->
+            <div class="filtro">
+                <form action="" method="GET">
+                    <input type="text" name="cliente" placeholder="Buscar por cliente" />
+                    <select name="status">
+                        <option value="">Todos os Status</option>
+                        <option value="pendente">Pendente</option>
+                        <option value="entregue">Entregue</option>
+                        <option value="enviado">Enviado</option>
+                    </select>
+                    <input type="submit" value="Filtrar" />
+                    <a href="pedido.html">Novo Pedido</a>
+                </form>
+               
+            </div>
+
+            <!-- Tabela de Vendas -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Venda</th>
+                        <th>Cliente</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1023</td>
+                        <td>Maria Silva</td>
+                        <td>10/09/2024</td>
+                        <td>
+                            <form action="" method="POST" class="status-form">
+                                <select name="status">
+                                    <option value="pendente" selected>Pendente</option>
+                                    <option value="entregue">Entregue</option>
+                                    <option value="enviado">Enviado</option>
+                                </select>
+                                <button type="submit">Atualizar</button>
+                            </form>
+                        </td>
+                        <td><a href="#" class="links-menu">Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>#1024</td>
+                        <td>João Souza</td>
+                        <td>10/09/2024</td>
+                        <td>
+                            <form action="" method="POST" class="status-form">
+                                <select name="status">
+                                    <option value="pendente">Pendente</option>
+                                    <option value="entregue" selected>Entregue</option>
+                                    <option value="enviado">Enviado</option>
+                                </select>
+                                <button type="submit">Atualizar</button>
+                            </form>
+                        </td>
+                        <td><a href="pedido.html" class="links-menu">Detalhes</a></td>
+                    </tr>
+                    <tr>
+                        <td>#1025</td>
+                        <td>Ana Oliveira</td>
+                        <td>09/09/2024</td>
+                        <td>
+                            <form action="" method="POST" class="status-form">
+                                <select name="status">
+                                    <option value="pendente">Pendente</option>
+                                    <option value="entregue">Entregue</option>
+                                    <option value="enviado" selected>Enviado</option>
+                                </select>
+                                <button type="submit">Atualizar</button>
+                            </form>
+                        </td>
+                        <td><a href="#" class="links-menu">Detalhes</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+</html>

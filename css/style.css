@@ -1,0 +1,313 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+header{
+    width: 10%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+}
+
+header nav a{
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    padding: 30px 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    background: #fff;
+    height: 100vh;
+    width: 100%;
+}
+
+/* indes */
+
+
+
+
+/*  */
+
+.busca{
+    background: #fff;
+    height: 130px;
+    border-bottom: 1px solid #6464645d;
+    /* align-items: center; */
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 10px;
+    
+}
+
+.busca .qqq{
+    padding: 10px;
+    border-radius: 5px;
+    width: 250px;
+    border: 1px solid #a0a0a0ee;
+}
+
+.busca input[type="submit"]{
+    padding: 10px 25px;
+    border: none;
+    background: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.vitrine {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100vh;
+    
+  }
+
+  .cliente {
+    flex: 1; /* Ocupa menos espaço em relação às outras divs */
+    border-right: 1px solid #79797945;
+    height: 100%;
+  }
+
+  .cliente form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    width: 90%;
+    margin: auto;
+    gap: 20px;
+  }
+
+  .cliente form div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cliente form div input{
+    padding: 10px;
+    
+    border: 1px solid #a0a0a0ee;
+  }
+
+  .produtos, .finalizar {
+    flex: 2; /* Ocupa o dobro do espaço da div .cliente */
+    
+  }
+
+  /* CSS produtos */
+
+  .produtos{
+    height: 100%;
+    
+    
+  }
+  .rolagem {
+    height: calc(80vh - 100px); /* Altura total da tela menos a altura da barra de busca */
+    overflow-y: auto; /* Adiciona a barra de rolagem vertical quando necessário */
+    padding-right: 10px; /* Para afastar o conteúdo da borda direita */
+}
+
+.rolagem::-webkit-scrollbar {
+    width: 10px;
+}
+
+.rolagem::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.rolagem::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+  
+
+  .produtos form{
+    /* display: block; */
+    text-align: center;
+    
+  
+  }
+
+  .produtos form input{
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    width: 80%;
+    border-radius: 50px;
+    text-align: center;
+    border: 1px solid #a0a0a0ee;
+  }
+
+
+  .prod {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 15px;
+  }
+
+  .prod-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .prod img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+
+  .prod-info {
+    flex-grow: 1;
+  }
+
+  .prod h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .prod p {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .quantity-control input[type="number"] {
+    width: 50px;
+    text-align: center;
+    margin: 0 5px;
+  }
+
+  .quantity-control button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #ccc;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+
+  .add-to-cart {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .add-to-cart:hover {
+    background-color: #45a049;
+  }
+
+ .fot{
+    display: flex;
+    justify-content: space-between;
+ }
+/* fim css produtos */
+.finalizar {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.finalizar h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#pedido-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.resumo-produto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.resumo-produto img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.resumo-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.resumo-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.total, .frete, .total-geral {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.btn-finalizar {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.btn-finalizar:hover {
+    background-color: #45a049;
+}
+

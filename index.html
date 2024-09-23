@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEED+ - CGS Tech</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        main{
+            overflow: auto;
+        }
+        /* Adicione o CSS diretamente aqui para os gráficos e tabelas */
+        .dashboard {
+            padding: 20px;
+        }
+
+        .painel-visao-geral {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .pedidos-recentes, .status-estoque, .grafico-container {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .pedidos-recentes table, .status-estoque table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .pedidos-recentes th, .pedidos-recentes td, .status-estoque th, .status-estoque td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .pedidos-recentes th, .status-estoque th {
+            background-color: #f4f4f4;
+        }
+
+        .grafico-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .grafico {
+            flex: 1;
+            height: 400px;
+        }
+
+        .grafico canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="links-menu">Home</a>
+            <a href="clientes.html" class="links-menu">Clientes</a>
+            <a href="produtos.html" class="links-menu">Produtos</a>
+            <a href="vendas.html" class="links-menu">Pedidos</a>
+            <a href="relato.html" class="links-menu">Relatórios</a>
+            <a href="" class="links-menu">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <!-- Painel de Visão Geral -->
+            <div class="painel-visao-geral">
+                <h2>Visão Geral</h2>
+
+                <!-- Pedidos Recentes -->
+                <div class="pedidos-recentes">
+                    <h3>Pedidos Recentes</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID Pedido</th>
+                                <th>Cliente</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1023</td>
+                                <td>Maria Silva</td>
+                                <td>10/09/2024</td>
+                                <td>Enviado</td>
+                            </tr>
+                            <tr>
+                                <td>#1024</td>
+                                <td>João Souza</td>
+                                <td>10/09/2024</td>
+                                <td>Processando</td>
+                            </tr>
+                            <tr>
+                                <td>#1025</td>
+                                <td>Ana Oliveira</td>
+                                <td>09/09/2024</td>
+                                <td>Entregue</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Status de Estoque -->
+                <div class="status-estoque">
+                    <h3>Status de Estoque</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Quantidade</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Produto 1</td>
+                                <td>15</td>
+                                <td>Em Estoque</td>
+                            </tr>
+                            <tr>
+                                <td>Produto 2</td>
+                                <td>5</td>
+                                <td>Baixo Estoque</td>
+                            </tr>
+                            <tr>
+                                <td>Produto 3</td>
+                                <td>0</td>
+                                <td>Esgotado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Gráficos -->
+                <div class="grafico-container">
+                    <div class="grafico">
+                        <h3>Resumo das Vendas</h3>
+                        <canvas id="vendasChart"></canvas>
+                    </div>
+
+                    <div class="grafico">
+                        <h3>Status de Estoque</h3>
+                        <canvas id="estoqueChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Simulação de dados para os gráficos
+        const vendasDados = {
+            labels: ['Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+            data: [1200, 1900, 3000, 0, 0, 0]
+        };
+
+        const estoqueDados = {
+            labels: ['Em Estoque', 'Baixo Estoque', 'Esgotado'],
+            data: [15, 5, 0]
+        };
+
+        // Gráfico de Vendas
+        var ctxVendas = document.getElementById('vendasChart').getContext('2d');
+        var vendasChart = new Chart(ctxVendas, {
+            type: 'bar',
+            data: {
+                labels: vendasDados.labels,
+                datasets: [{
+                    label: 'Vendas',
+                    data: vendasDados.data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Status de Estoque
+        var ctxEstoque = document.getElementById('estoqueChart').getContext('2d');
+        var estoqueChart = new Chart(ctxEstoque, {
+            type: 'doughnut',
+            data: {
+                labels: estoqueDados.labels,
+                datasets: [{
+                    label: 'Status de Estoque',
+                    data: estoqueDados.data,
+                    backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 99, 132, 0.2)'],
+                    borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 99, 132, 1)'],
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

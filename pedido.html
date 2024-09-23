@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEED+ - CGS Tech</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+
+        <nav>
+            <a href="index.html" class="links-menu">Home</a>
+            <a href="clientes.html" class="links-menu">Clientes</a>
+            <a href="produtos.html" class="links-menu">Produtos</a>
+            <a href="vendas.html" class="links-menu">Pedidos</a>
+            <a href="relato.html" class="links-menu">Relatorios</a>
+            <a href="" class="links-menu">sair</a>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="busca">
+
+            <h2>Buscar Cliente</h2>
+            <form action="">
+                <input type="search" id="qq" name="qq" class="qqq" placeholder="CPF/CNPJ">
+
+                <input type="submit" value="Buscar">
+            </form>
+
+        </div>
+
+        <section class="vitrine">
+            <div class="cliente">
+                <form action="">
+                    <div class="">
+                        <label for="">Nome Cliente</label>
+                        <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente">
+                    </div>
+                    <div class="">
+                        <label for="">Telefone para Contato</label>
+                        <input type="text" id="cliente" name="cliente" placeholder="-557599999-9999">
+                    </div>
+                    <div class="">
+                        <label for="">CEP</label>
+                        <input type="text" id="cliente" name="cliente" placeholder="CEP Residencial">
+                    </div>
+                    <div class="">
+                        <label for="">Estado</label>
+                        <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente">
+                    </div>
+                    <div class="">
+                        <label for="">Cidade</label>
+                        <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente">
+                    </div>
+                    <div class="">
+                        <label for="">Endereço</label>
+                        <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente">
+                    </div>
+                    <div class="">
+                        <label for="">Número:</label>
+                        <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente">
+                    </div>
+                    <div class="">
+                        <label for="">Complemento</label>
+                        <input type="text" id="cliente" name="cliente" placeholder="Nome do Cliente">
+                    </div>
+                </form>
+            </div>
+            <div class="produtos">
+                <form action="">
+                  <input type="search" placeholder="Digite nome ou código do produto.">
+                </form>
+                <div class="rolagem">
+                    <article class="prod">
+                      <!-- Container da imagem e informações do produto -->
+                      <div class="prod-content">
+                        <!-- Imagem do produto -->
+                        <img src="https://via.placeholder.com/150" alt="Imagem do Produto">
+                        <!-- Informações do produto (Nome e descrição) -->
+                        <div class="prod-info">
+                          <h3>Nome do Produto</h3>
+                          <p>Descrição breve do produto, destacando suas principais características.</p>
+                        </div>
+                      </div>
+                      <!-- Controle de quantidade e botão "Adicionar ao Carrinho" -->
+                      <div class="fot">
+                          <div class="quantity-control">
+                            <button type="button" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" id="quantity" value="1" min="1">
+                            <button type="button" onclick="changeQuantity(1)">+</button>
+                          </div>
+                          <a href="#" class="add-to-cart" onclick="adicionarAoCarrinho('Produto 1', 50.00)">Adicionar ao Carrinho</a>
+
+                      </div>
+                    </article>
+                    <article class="prod">
+                        <!-- Container da imagem e informações do produto -->
+                        <div class="prod-content">
+                          <!-- Imagem do produto -->
+                          <img src="https://via.placeholder.com/150" alt="Imagem do Produto">
+                    
+                          <!-- Informações do produto (Nome e descrição) -->
+                          <div class="prod-info">
+                            <h3>Nome do Produto</h3>
+                            <p>Descrição breve do produto, destacando suas principais características.</p>
+                          </div>
+                        </div>
+                    
+                        <!-- Controle de quantidade e botão "Adicionar ao Carrinho" -->
+                        <div class="fot">
+                            <div class="quantity-control">
+                              <button type="button" onclick="changeQuantity(-1)">-</button>
+                              <input type="number" id="quantity" value="1" min="1">
+                              <button type="button" onclick="changeQuantity(1)">+</button>
+                            </div>
+                            <a href="#" class="add-to-cart">Adicionar ao Carrinho</a>
+                        </div>
+                    </article>
+                    <article class="prod">
+                    <!-- Container da imagem e informações do produto -->
+                    <div class="prod-content">
+                        <!-- Imagem do produto -->
+                        <img src="https://via.placeholder.com/150" alt="Imagem do Produto">
+                        <!-- Informações do produto (Nome e descrição) -->
+                        <div class="prod-info">
+                        <h3>Nome do Produto</h3>
+                        <p>Descrição breve do produto, destacando suas principais características.</p>
+                        </div>
+                    </div>
+                    <!-- Controle de quantidade e botão "Adicionar ao Carrinho" -->
+                    <div class="fot">
+                        <div class="quantity-control">
+                            <button type="button" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" id="quantity" value="1" min="1">
+                            <button type="button" onclick="changeQuantity(1)">+</button>
+                        </div>
+                        <a href="#" class="add-to-cart">Adicionar ao Carrinho</a>
+                    </div>
+                    </article>
+                    <article class="prod">
+                    <!-- Container da imagem e informações do produto -->
+                    <div class="prod-content">
+                        <!-- Imagem do produto -->
+                        <img src="https://via.placeholder.com/150" alt="Imagem do Produto">
+                        <!-- Informações do produto (Nome e descrição) -->
+                        <div class="prod-info">
+                        <h3>Nome do Produto</h3>
+                        <p>Descrição breve do produto, destacando suas principais características.</p>
+                        </div>
+                    </div>
+                    <!-- Controle de quantidade e botão "Adicionar ao Carrinho" -->
+                    <div class="fot">
+                        <div class="quantity-control">
+                            <button type="button" onclick="changeQuantity(-1)">-</button>
+                            <input type="number" id="quantity" value="1" min="1">
+                            <button type="button" onclick="changeQuantity(1)">+</button>
+                        </div>
+                        <a href="#" class="add-to-cart">Adicionar ao Carrinho</a>
+                    </div>
+                    </article>
+                </div>
+            </div>
+            <div class="finalizar">
+                <h3>Resumo do Pedido</h3>
+                <div id="pedido-info">
+                    <!-- Produtos adicionados -->
+                    <div id="produto-adicionado">
+                        <!-- Exemplo de um card de resumo de produto -->
+                        <div class="resumo-produto">
+                            <img src="https://via.placeholder.com/50" alt="Imagem do Produto">
+                            <div class="resumo-info">
+                                <p><strong>Produto 1</strong></p>
+                                <p>Preço: R$ 50,00</p>
+                                <p>Quantidade: 1</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Valor total -->
+                    <div class="total">
+                        <p><strong>Total dos produtos:</strong> R$ <span id="total-produtos">50.00</span></p>
+                    </div>
+            
+                    <!-- Frete -->
+                    <div class="frete">
+                        <p><strong>Frete:</strong> R$ <span id="frete">10.00</span></p>
+                    </div>
+            
+                    <!-- Total geral -->
+                    <div class="total-geral">
+                        <p><strong>Total Geral:</strong> R$ <span id="total-geral">60.00</span></p>
+                    </div>
+                </div>
+            
+                <!-- Botão de finalizar -->
+                <a href="#" class="btn-finalizar">Finalizar Pedido</a>
+            </div>
+            
+            
+            
+        </section>
+
+    </main>
+
+
+   
+      
+    
+</body>
+</html>
